@@ -3,17 +3,23 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
-import { HelloPlainComponent } from './hello-plain'; // Nuestro componente.
+import { HelloPlainComponent } from './hello-plain';
 
 @Component({
     selector:'pc-app',
-    template: `<hello-plain></hello-plain>` // ¿y ese tag?
+    template: `<hello-plain [office]="theOfficeToGreet"></hello-plain>` // [] define un one way binding hacia la plantilla
 })
-export class App { // Ahora se llama App.
+export class App {
+
+    theOfficeToGreet: string;
+
+    constructor() {
+        this.theOfficeToGreet = 'Bilbao';
+    }
 }
 
 @NgModule({
-    declarations: [App, HelloPlainComponent], // Hay que registrar el componente en el módulo.
+    declarations: [App, HelloPlainComponent],
     imports: [BrowserModule],
     bootstrap: [App]
 })

@@ -7,15 +7,14 @@ import { HelloPlainComponent } from './hello-plain';
 
 @Component({
     selector:'pc-app',
-    template: `<hello-plain [office]="theOfficeToGreet"></hello-plain>` // [] define un one way binding hacia la plantilla
+    template: `<hello-plain (greetComposed)="shout($event)"></hello-plain>` // espera valor de salida y actua
 })
 export class App {
 
-    theOfficeToGreet: string;
-
-    constructor() {
-        this.theOfficeToGreet = 'Bilbao';
+    shout(greeting: any){
+        alert(greeting);
     }
+
 }
 
 @NgModule({
@@ -24,7 +23,6 @@ export class App {
     bootstrap: [App]
 })
 export class AppModule {
-
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);

@@ -1,13 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component, Output, EventEmitter, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'hello-plain',
-    template: '<h1>Hello Plain Concepts {{text}}!</h1>'
+    template: `<input #office/>
+               <button (click)="greet(office)">Greet</button>` 
+               // recogemos la refencia al componente html con la variable #office
+               // definimos un one way binding hacia el componente con ()
 })
 export class HelloPlainComponent {
 
-    // Definimos un dato de entrada de nuestro componente
-    @Input('office') // El 'input' se llama 'office'
-    text: string; // Para el componente internamente es 'text'
+    // Salida de nuestro componente (un EventEmitter)
+    @Output()
+    greetComposed: EventEmitter<string> = new EventEmitter<string>();
+
+    greet(office: any) {
+        // office es nuestro componente html
+        // emitimos su valor para quien lo está esperando
+        this.greetComposed.emit(`Hello from ${office.value}!`);
+    }
 
 }

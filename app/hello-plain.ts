@@ -1,21 +1,19 @@
 import { Component, Output, EventEmitter, ElementRef } from '@angular/core';
 
+declare const module: any; // Para que el linter no se queje.
+
 @Component({
+    moduleId: module.id, // The module id of the module that contains the component.
+                         // Needed to be able to resolve relative urls for templates and styles.
     selector: 'hello-plain',
-    template: `<input #office/>
-               <button (click)="greet(office)">Greet</button>` 
-               // recogemos la refencia al componente html con la variable #office
-               // definimos un one way binding hacia el componente con ()
+    templateUrl: 'hello-plain.template.html' // template vs templateUrl.
 })
 export class HelloPlainComponent {
 
-    // Salida de nuestro componente (un EventEmitter)
     @Output()
     greetComposed: EventEmitter<string> = new EventEmitter<string>();
 
     greet(office: any) {
-        // office es nuestro componente html
-        // emitimos su valor para quien lo está esperando
         this.greetComposed.emit(`Hello from ${office.value}!`);
     }
 

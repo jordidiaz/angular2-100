@@ -7,7 +7,7 @@ import { HelloPlainComponent } from './hello-plain';
 
 @Component({
     selector:'pc-app',
-    template: `<hello-plain (greetComposed)="shout($event)"></hello-plain>` // espera valor de salida y actua
+    template: `<hello-plain (greetComposed)="shout($event)"></hello-plain>`
 })
 export class App {
 

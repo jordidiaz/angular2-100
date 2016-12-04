@@ -3,7 +3,7 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
-import { HelloPlainComponent } from './hello-plain';
+import { HelloPlainComponent } from './hello-plain-component/hello-plain';
 
 @Component({
     selector:'pc-app',

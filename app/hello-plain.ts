@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter, ElementRef } from '@angular/core';
 
-declare const module: any; // Para que el linter no se queje.
+declare const module: any; 
 
 @Component({
-    moduleId: module.id, // The module id of the module that contains the component.
-                         // Needed to be able to resolve relative urls for templates and styles.
+    moduleId: module.id, 
     selector: 'hello-plain',
-    templateUrl: 'hello-plain.template.html' // template vs templateUrl.
+    templateUrl: 'hello-plain.template.html',
+    styleUrls: ['hello-plain.style.css'] // style file.
 })
 export class HelloPlainComponent {
 

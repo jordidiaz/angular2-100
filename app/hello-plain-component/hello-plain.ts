@@ -6,7 +6,7 @@ declare const module: any;
     moduleId: module.id, 
     selector: 'hello-plain',
     templateUrl: 'hello-plain.template.html',
-    styleUrls: ['hello-plain.style.css'] // style file.
+    styleUrls: ['hello-plain.style.css']
 })
 export class HelloPlainComponent {
 

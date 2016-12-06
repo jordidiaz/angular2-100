@@ -11,7 +11,7 @@ declare const module: any;
 export class EventsAndZonesComponent {
 
     onClick() {
-        
+        debugger
     }
 
 }

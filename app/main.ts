@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import {Component} from "@angular/core";
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
@@ -10,14 +11,14 @@ import { DomPropertiesComponent } from './dom-properties-component/dom-propertie
 import { EventsAndZonesComponent } from './events-and-zones-component/events-and-zones.component';
 import { SortPipe } from './sort-pipe/sort-pipe';
 
-import { OfficeListComponent, OfficeService } from './office-list-component/index'; // Barrel
+import { BeerListComponent, BeerService } from './beer-list-component/index'; // Barrel
 
 declare const module: any;
 
 @Component({
     moduleId: module.id,
     selector:'pc-app',
-    template: `<office-list></office-list>`, 
+    template: `<beer-list></beer-list>`, 
     styleUrls: ['common.style.css']
 })
 export class App {
@@ -35,11 +36,11 @@ export class App {
         BigTextOnClickDirective,
         DomPropertiesComponent,
         EventsAndZonesComponent,
-        OfficeListComponent,
+        BeerListComponent,
         SortPipe],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule, HttpModule],
     bootstrap: [App],
-    providers: [OfficeService] // registrarlo en el injector
+    providers: [BeerService] // registrarlo en el injector
 })
 export class AppModule {
 }

@@ -10,7 +10,7 @@ import { DomPropertiesComponent } from './dom-properties-component/dom-propertie
 import { EventsAndZonesComponent } from './events-and-zones-component/events-and-zones.component';
 import { SortPipe } from './sort-pipe/sort-pipe';
 
-import { OfficeListComponent } from './office-list-component/index'; // Barrel
+import { OfficeListComponent, OfficeService } from './office-list-component/index'; // Barrel
 
 declare const module: any;
 
@@ -38,7 +38,8 @@ export class App {
         OfficeListComponent,
         SortPipe],
     imports: [BrowserModule, FormsModule],
-    bootstrap: [App]
+    bootstrap: [App],
+    providers: [OfficeService] // registrarlo en el injector
 })
 export class AppModule {
 }

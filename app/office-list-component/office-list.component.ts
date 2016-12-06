@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { OfficeService } from './office.service';
+
 declare const module: any;
 
 @Component({
@@ -11,19 +13,16 @@ export class OfficeListComponent implements OnInit { // OnInit
 
     public offices: string[];
 
-    constructor() { }
+    private officeService: OfficeService; 
+
+    constructor(officeService: OfficeService) { // injectarlo
+        this.officeService = officeService;
+    }
+
+    /*constructor(private officeService: OfficeService) {}*/ //short syntax
 
     ngOnInit() {
-        this.offices = [
-            "Seattle",
-            "London",
-            "Dubai",
-            "Madrid",
-            "Bilbao",
-            "Barcelona",
-            "Sevilla",
-            "León"
-        ]
+        this.offices = this.officeService.getOffices();
     }
 
 }

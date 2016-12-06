@@ -8,13 +8,14 @@ import { HelloPlainComponent } from './hello-plain-component/hello-plain';
 import { BigTextOnClickDirective } from './big-text-on-click-directive/big-text-on-click';
 import { DomPropertiesComponent } from './dom-properties-component/dom-properties.component';
 import { EventsAndZonesComponent } from './events-and-zones-component/events-and-zones.component';
+import { SortPipe } from './sort-pipe/sort-pipe';
 
 declare const module: any;
 
 @Component({
     moduleId: module.id,
     selector:'pc-app',
-    template: `<events-and-zones></events-and-zones>`, 
+    template: `<dom-properties></dom-properties>`, 
     styleUrls: ['common.style.css']
 })
 export class App {
@@ -26,7 +27,13 @@ export class App {
 }
 
 @NgModule({
-    declarations: [App, HelloPlainComponent, BigTextOnClickDirective, DomPropertiesComponent, EventsAndZonesComponent], // añadirla! ver que sin añadir no sale ni en los sources
+    declarations: [
+        App,
+        HelloPlainComponent,
+        BigTextOnClickDirective,
+        DomPropertiesComponent,
+        EventsAndZonesComponent,
+        SortPipe],
     imports: [BrowserModule, FormsModule],
     bootstrap: [App]
 })

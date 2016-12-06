@@ -1,5 +1,1 @@
-<input #theInput [style.border-color]="'red'" (keyup)="onKeyUp(theInput)"/>
-<label>{{message}}</label>
-
-<input type="text" [(ngModel)]="messageBinding">
-<label>{{messageBinding}}</label>
+<label>Pipe: {{data | sort:'DESC'}}</label>

@@ -1,7 +1,5 @@
-<div class="color-sample" [style.background]="'blue'"> <!--Feature de Angular-->
-    Color sample
-</div>
+<input #theInput [style.border-color]="'red'" (keyup)="onKeyUp(theInput)"/>
+<label>{{message}}</label>
 
-<button [disabled]="true">Disabled</button> <!--Nativo-->
-
-<input [required]="true"> 
+<input type="text" [(ngModel)]="messageBinding">
+<label>{{messageBinding}}</label>

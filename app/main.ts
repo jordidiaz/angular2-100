@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import { FormsModule } from '@angular/forms';
 
 import { HelloPlainComponent } from './hello-plain-component/hello-plain';
 import { BigTextOnClickDirective } from './big-text-on-click-directive/big-text-on-click';
@@ -25,7 +26,7 @@ export class App {
 
 @NgModule({
     declarations: [App, HelloPlainComponent, BigTextOnClickDirective, DomPropertiesComponent], // añadirla! ver que sin añadir no sale ni en los sources
-    imports: [BrowserModule],
+    imports: [BrowserModule, FormsModule],
     bootstrap: [App]
 })
 export class AppModule {

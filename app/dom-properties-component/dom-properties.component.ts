@@ -10,4 +10,11 @@ declare const module: any;
 })
 export class DomPropertiesComponent {
 
+    message: string;
+    messageBinding: string;
+
+    onKeyUp(input: any) {
+        this.message = input.value;
+    }
+
 }

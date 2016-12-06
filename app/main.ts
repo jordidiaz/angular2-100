@@ -10,12 +10,14 @@ import { DomPropertiesComponent } from './dom-properties-component/dom-propertie
 import { EventsAndZonesComponent } from './events-and-zones-component/events-and-zones.component';
 import { SortPipe } from './sort-pipe/sort-pipe';
 
+import { OfficeListComponent } from './office-list-component/index'; // Barrel
+
 declare const module: any;
 
 @Component({
     moduleId: module.id,
     selector:'pc-app',
-    template: `<dom-properties></dom-properties>`, 
+    template: `<office-list></office-list>`, 
     styleUrls: ['common.style.css']
 })
 export class App {
@@ -33,6 +35,7 @@ export class App {
         BigTextOnClickDirective,
         DomPropertiesComponent,
         EventsAndZonesComponent,
+        OfficeListComponent,
         SortPipe],
     imports: [BrowserModule, FormsModule],
     bootstrap: [App]

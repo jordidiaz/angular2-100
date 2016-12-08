@@ -4,10 +4,8 @@ import { BrowserModule} from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { FormsModule } from '@angular/forms';
 
-import { BeerListComponent, BeerService } from './beer-module/beer-list-component/index';
-
 import { DirectivesModule } from './directives-module/directives.module';
-import { PipesModule } from './pipes-module/pipes.module';
+import { BeerModule } from './beer-module/beer.module';
 
 declare const module: any;
 
@@ -21,18 +19,16 @@ export class App {}
 
 @NgModule({
     declarations: [
-        App,
-        BeerListComponent
+        App
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         DirectivesModule,
-        PipesModule
+        BeerModule
     ],
-    bootstrap: [App],
-    providers: [BeerService]
+    bootstrap: [App]
 })
 export class AppModule {
 }

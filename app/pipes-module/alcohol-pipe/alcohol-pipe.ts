@@ -8,7 +8,7 @@ export class AlcoholPipe implements PipeTransform {
 
     transform(value: string): any {
 
-        return `{value}% alc/vol`
+        return `${value}% alc/vol`
         
     }
 }

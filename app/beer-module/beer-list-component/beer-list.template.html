@@ -1,5 +1,5 @@
 <ul>
     <li *ngFor="let beer of beers">
-        <div big-text-on-click>{{beer.name}}</div>
+        <div big-text-on-click>{{beer.name}} - {{beer.abv | alcohol}}</div>
     </li>
 </ul>

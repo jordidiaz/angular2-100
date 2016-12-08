@@ -1,17 +1,12 @@
+import { Component, NgModule } from "@angular/core";
 import { HttpModule } from '@angular/http';
-import {Component} from "@angular/core";
-import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import { BrowserModule} from "@angular/platform-browser";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { FormsModule } from '@angular/forms';
 
-import { HelloPlainComponent } from './hello-plain-component/hello-plain';
-import { BigTextOnClickDirective } from './big-text-on-click-directive/big-text-on-click';
-import { DomPropertiesComponent } from './dom-properties-component/dom-properties.component';
-import { EventsAndZonesComponent } from './events-and-zones-component/events-and-zones.component';
-import { SortPipe } from './sort-pipe/sort-pipe';
-
-import { BeerListComponent, BeerService } from './beer-list-component/index'; // Barrel
+import { BigTextOnClickDirective } from './big-text-on-click-directive/index';
+import { AlcoholPipe } from './alcohol-pipe/index';
+import { BeerListComponent, BeerService } from './beer-list-component/index';
 
 declare const module: any;
 
@@ -32,15 +27,12 @@ export class App {
 @NgModule({
     declarations: [
         App,
-        HelloPlainComponent,
         BigTextOnClickDirective,
-        DomPropertiesComponent,
-        EventsAndZonesComponent,
         BeerListComponent,
-        SortPipe],
+        AlcoholPipe],
     imports: [BrowserModule, FormsModule, HttpModule],
     bootstrap: [App],
-    providers: [BeerService] // registrarlo en el injector
+    providers: [BeerService]
 })
 export class AppModule {
 }

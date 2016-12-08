@@ -4,9 +4,10 @@ import { BrowserModule} from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { FormsModule } from '@angular/forms';
 
-import { BigTextOnClickDirective } from './big-text-on-click-directive/index';
-import { AlcoholPipe } from './alcohol-pipe/index';
-import { BeerListComponent, BeerService } from './beer-list-component/index';
+import { AlcoholPipe } from './pipes-module/alcohol-pipe/index';
+import { BeerListComponent, BeerService } from './beer-module/beer-list-component/index';
+
+import { DirectivesModule } from './directives-module/directives.module';
 
 declare const module: any;
 
@@ -16,21 +17,20 @@ declare const module: any;
     template: `<beer-list></beer-list>`, 
     styleUrls: ['common.style.css']
 })
-export class App {
-
-    shout(greeting: any){
-        alert(greeting);
-    }
-
-}
+export class App {}
 
 @NgModule({
     declarations: [
         App,
-        BigTextOnClickDirective,
         BeerListComponent,
-        AlcoholPipe],
-    imports: [BrowserModule, FormsModule, HttpModule],
+        AlcoholPipe
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        DirectivesModule
+    ],
     bootstrap: [App],
     providers: [BeerService]
 })

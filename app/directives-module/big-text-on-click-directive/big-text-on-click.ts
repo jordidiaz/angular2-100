@@ -1,7 +1,7 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostBinding, HostListener, style } from '@angular/core';
 
 @Directive({
-    selector: '[big-text-on-click]',
+    selector: '[big-text-on-click]'
 })
 export class BigTextOnClickDirective {
 

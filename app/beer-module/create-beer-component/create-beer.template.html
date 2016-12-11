@@ -1,0 +1,15 @@
+<form>
+    <fieldset>
+        <legend>Beer</legend>
+        <div>
+            <label>Name</label>
+            <input name="title" type="text" [(ngModel)]="beer.name">
+        </div>
+        <div>
+            <label>ABV</label>
+            <input name="abv" type="number" [(ngModel)]="beer.abv">
+        </div>
+    </fieldset>
+</form>
+
+{{beer | json}}

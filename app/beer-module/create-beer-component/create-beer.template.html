@@ -1,9 +1,9 @@
-<form>
+<form novalidate>
     <fieldset>
         <legend>Beer</legend>
         <div>
             <label>Name</label>
-            <input name="title" type="text" [(ngModel)]="beer.name">
+            <input name="title" type="text" [(ngModel)]="beer.name" required>
         </div>
         <div>
             <label>ABV</label>

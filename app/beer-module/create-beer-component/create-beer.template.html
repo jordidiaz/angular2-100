@@ -1,9 +1,15 @@
-<form [formGroup]="beerForm">
+<form [formGroup]="beerForm" novalidate>
     <fieldset>
         <legend>Beer</legend>
         <div>
             <label>Name</label>
             <input formControlName="name">
+            <div class="error" *ngIf="beerForm.controls.name.errors?.required">
+               Name is mandatory
+            </div>
+            <div class="error" *ngIf="beerForm.controls.name.errors?.minlength">
+               Name is too short
+            </div>
         </div>
         <div>
             <label>ABV</label>

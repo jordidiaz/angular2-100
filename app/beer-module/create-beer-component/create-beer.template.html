@@ -3,14 +3,17 @@
         <legend>Beer</legend>
         <div>
             <label>Name</label>
-            <input name="title" type="text" [(ngModel)]="beer.name" required minlength="5">
+            <input name="title" type="text" [(ngModel)]="beer.name" required minlength="5" #name="ngModel">
+            <div class="error" *ngIf="name?.dirty && name?.errors?.required">Field is mandatory</div>
+            <div class="error" *ngIf="name?.dirty && name?.errors?.minlength">Min 5 chars</div>
         </div>
         <div>
             <label>ABV</label>
-            <input name="abv" type="number" [(ngModel)]="beer.abv" required>
+            <input name="abv" type="number" [(ngModel)]="beer.abv" required #abv="ngModel">
+            <div class="error" *ngIf="abv?.dirty && abv?.errors?.required">Field is mandatory</div>
         </div>
     </fieldset>
     <button [disabled]="!f.valid" type="submit">Create</button>
 </form>
 
-{{f.value | json}}
+{{name.errors | json}}

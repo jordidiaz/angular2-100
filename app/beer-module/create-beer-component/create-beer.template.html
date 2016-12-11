@@ -1,15 +1,16 @@
-<form novalidate>
+<form novalidate #f="ngForm">
     <fieldset>
         <legend>Beer</legend>
         <div>
             <label>Name</label>
-            <input name="title" type="text" [(ngModel)]="beer.name" required>
+            <input name="title" type="text" [(ngModel)]="beer.name" required minlength="5">
         </div>
         <div>
             <label>ABV</label>
-            <input name="abv" type="number" [(ngModel)]="beer.abv">
+            <input name="abv" type="number" [(ngModel)]="beer.abv" required>
         </div>
     </fieldset>
+    <button [disabled]="!f.valid" type="submit">Create</button>
 </form>
 
-{{beer | json}}
+{{f.value | json}}

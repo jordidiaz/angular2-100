@@ -1,15 +1,15 @@
-<form>
+<form [formGroup]="beerForm">
     <fieldset>
         <legend>Beer</legend>
         <div>
             <label>Name</label>
-            <input name="title" type="text" [(ngModel)]="beer.name">
+            <input formControlName="name">
         </div>
         <div>
             <label>ABV</label>
-            <input name="abv" type="number" [(ngModel)]="beer.abv">
+            <input formControlName="abv" type="number">
         </div>
     </fieldset>
 </form>
 
-{{beer | json}}
+{{beerForm.value | json}}

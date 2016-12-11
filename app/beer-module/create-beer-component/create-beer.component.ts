@@ -43,4 +43,17 @@ export class CreateBeerComponent {
 
     }
 
+    partialUpdate() {
+        this.beerForm.patchValue({
+            name: 'Heineken'
+        })
+    }
+
+    fullUpdate() {
+        this.beerForm.setValue({
+            name: 'Heineken',
+            abv: 5
+        })
+    }
+
 }

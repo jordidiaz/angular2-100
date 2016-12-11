@@ -16,6 +16,10 @@
             <input formControlName="abv" type="number">
         </div>
     </fieldset>
+    <div>
+        <button (click)="partialUpdate()">Partial update</button>
+    </div>
+    <div>
+        <button (click)="fullUpdate()">Full update</button>
+    </div>
 </form>
-
-{{beerForm.value | json}}
